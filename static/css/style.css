@@ -209,19 +209,17 @@ input, select, textarea { font-family: inherit; }
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
-  height: var(--nav-h);
-  background: rgba(3,6,11,0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid transparent;
-  transition: all var(--transition);
+  z-index: 100;
+  background: transparent;
+  transition: background 0.3s ease, padding 0.3s ease;
+  padding: 16px 0;
 }
 
 .navbar.scrolled {
-  background: rgba(3,6,11,0.96);
-  border-color: rgba(220,227,234,0.16);
-  box-shadow: 0 14px 40px rgba(0,0,0,0.28);
+  background: rgba(5, 20, 50, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+  padding: 24px 0; /* ← më i lartë kur scrolled */
 }
 
 .navbar-inner {
@@ -366,15 +364,27 @@ input, select, textarea { font-family: inherit; }
    HERO
    ============================================================ */
 .hero {
-  min-height: 100svh;
-  padding-top: var(--nav-h);
+  position: relative;
+  min-height: 100vh;  /* mbulon të gjithë ekranin */
   display: flex;
   align-items: center;
-  background:
-    radial-gradient(circle at 78% 24%, rgba(220,227,234,0.08), transparent 32%),
-    linear-gradient(145deg, #020408 0%, #060A10 48%, #0B111B 76%, #020408 100%);
-  position: relative;
-  overflow: hidden;
+}
+
+.hero-photo-bg {
+  position: fixed;
+  inset: 0;
+  background-size: cover;
+  background-position: center top; /* ← fillon nga lart */
+  background-attachment: fixed;    /* ← parallax efekt */
+  z-index: -2;
+  transition: background-position 0.1s ease;
+}
+
+.hero-photo-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,20,60,0.75) 0%, rgba(0,40,90,0.60) 100%);
+  z-index: -1;
 }
 
 .hero-bg-grid {
@@ -670,7 +680,9 @@ input, select, textarea { font-family: inherit; }
 /* ============================================================
    SERVICES
    ============================================================ */
-.services-section { background: linear-gradient(180deg, #F8FAFC 0%, #EEF3F7 100%); }
+.services-section {
+  background: linear-gradient(180deg, #F8FAFC 0%, #EEF3F7 100%);
+}
 
 .services-grid {
   display: grid;
@@ -678,20 +690,16 @@ input, select, textarea { font-family: inherit; }
   gap: 20px;
 }
 
-.service-card--wide { grid-column: 1 / -1; }
-
 .service-card {
+  display: flex;
+  flex-direction: row;
   background: var(--white);
   border: 1px solid var(--gray-border);
   border-radius: var(--radius-sm);
-  padding: 36px 32px;
-  position: relative;
   overflow: hidden;
-  transition: all var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
   cursor: default;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+  position: relative;
 }
 
 .service-card::before {
@@ -705,46 +713,47 @@ input, select, textarea { font-family: inherit; }
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--transition);
+  z-index: 2;
 }
 
 .service-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
-  border-color: rgba(0,168,255,0.25);
+  border-color: rgba(0, 168, 255, 0.25);
 }
 
-.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover::before {
+  transform: scaleX(1);
+}
 
-.sc-icon-wrap {
-  width: 52px;
-  height: 52px;
-  background: var(--blue-light);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  color: var(--blue-primary);
-  transition: all var(--transition);
+.sc-img {
+  width: 50%;
   flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+  min-height: 200px;
 }
 
-.service-card:hover .sc-icon-wrap {
-  background: var(--blue-primary);
-  color: var(--white);
-  transform: scale(1.08);
-  box-shadow: var(--shadow-blue);
+.sc-body {
+  width: 50%;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
 }
 
 .sc-title {
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--text-dark);
   letter-spacing: 0;
+  line-height: 1.3;
 }
 
 .sc-desc {
-  font-size: 15px;
+  font-size: 13.5px;
   color: var(--text-muted);
   line-height: 1.65;
   flex: 1;
@@ -762,7 +771,7 @@ input, select, textarea { font-family: inherit; }
   color: var(--text-muted);
   transition: all var(--transition);
   align-self: flex-end;
-  margin-top: 4px;
+  margin-top: auto;
 }
 
 .service-card:hover .sc-arrow {
@@ -771,15 +780,28 @@ input, select, textarea { font-family: inherit; }
   transform: translateX(4px);
 }
 
-.service-card--wide {
-  flex-direction: row;
-  align-items: center;
-  gap: 28px;
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.service-card--wide .sc-desc { max-width: 600px; }
-.service-card--wide .sc-arrow { margin-top: 0; }
-
+@media (max-width: 640px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-card {
+    flex-direction: column;
+  }
+  .sc-img {
+    width: 100%;
+    height: 180px;
+    min-height: unset;
+  }
+  .sc-body {
+    width: 100%;
+  }
+}
 /* ============================================================
    WHY CHOOSE US
    ============================================================ */

@@ -44,7 +44,6 @@ function initNavbar() {
       hamburger.setAttribute('aria-expanded', isOpen);
     });
 
-    // Close on link click
     links.forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
@@ -54,7 +53,6 @@ function initNavbar() {
       });
     });
 
-    // Close on outside click
     document.addEventListener('click', (e) => {
       if (!navbar.contains(e.target) && navLinks.classList.contains('open')) {
         navLinks.classList.remove('open');
@@ -85,6 +83,15 @@ function initNavbar() {
   };
 
   window.addEventListener('scroll', setActiveLink, { passive: true });
+
+  // ← SHTO KETU parallax hero background
+  const heroBg = document.querySelector('.hero-photo-bg');
+  if (heroBg) {
+    window.addEventListener('scroll', () => {
+      const rate = window.scrollY * 0.4;
+      heroBg.style.backgroundPosition = `center ${rate}px`;
+    }, { passive: true });
+  }
 }
 
 /* ============================================================
@@ -234,22 +241,22 @@ function initContactForm() {
     fullName: {
       el: $('#fullName'),
       error: $('#fullNameError'),
-      validate: (v) => v.trim().length >= 2 ? '' : 'Please enter your full name.'
+      validate: (v) => v.trim().length >= 2 ? '' : 'Bitte geben Sie Ihren vollständigen Namen ein.'
     },
     email: {
       el: $('#email'),
       error: $('#emailError'),
-      validate: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? '' : 'Please enter a valid email address.'
+      validate: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? '' : 'Bitte geben Sie eine gültige E-Mail-Adresse ein.'
     },
     service: {
       el: $('#service'),
       error: $('#serviceError'),
-      validate: (v) => v ? '' : 'Please select a service.'
+      validate: (v) => v ? '' : 'Bitte wählen Sie eine Dienstleistung aus.'
     },
     message: {
       el: $('#message'),
       error: $('#messageError'),
-      validate: (v) => v.trim().length >= 10 ? '' : 'Please enter a message (at least 10 characters).'
+      validate: (v) => v.trim().length >= 10 ? '' : 'Bitte geben Sie eine Nachricht ein (mindestens 10 Zeichen).'
     }
   };
 
@@ -267,7 +274,6 @@ function initContactForm() {
     return !msg;
   }
 
-  // Live validation on blur
   Object.keys(fields).forEach(key => {
     const field = fields[key];
     if (!field.el) return;
@@ -278,42 +284,17 @@ function initContactForm() {
   });
 
   form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
     let valid = true;
     Object.keys(fields).forEach(key => {
       if (!validateField(key)) valid = false;
     });
 
-    if (!valid) return;
-
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const success = $('#formSuccess');
-
-    // Simulate submission
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+    if (!valid) {
+      e.preventDefault(); // blloko vetëm nëse ka error
     }
-
-    setTimeout(() => {
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Request';
-      }
-
-      if (success) success.classList.add('show');
-
-      form.reset();
-
-      // Hide success after 6s
-      setTimeout(() => {
-        if (success) success.classList.remove('show');
-      }, 6000);
-    }, 1800);
+    // nëse valid = true, forma dërgohet normalisht tek Django
   });
 }
-
 /* ============================================================
    BACK TO TOP BUTTON
    ============================================================ */
@@ -464,4 +445,13 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounters();
   initHeroParallax();
   initCardTilt();
+});
+
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
 });

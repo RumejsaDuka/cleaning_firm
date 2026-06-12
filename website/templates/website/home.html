@@ -1,0 +1,431 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leicht &amp; Blitzsauber - Gebäudeservice in Aichach</title>
+  <meta name="description" content="Leicht & Blitzsauber bietet professionelle Reinigung, Solar Reinigung, Fassaden Reinigung und Gartenpflege in Aichach und Umgebung." />
+  <meta name="keywords" content="Gebäudeservice, Reinigung, Aichach, Fensterreinigung, Solar Reinigung, Fassaden Reinigung, Gartenpflege" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Leicht & Blitzsauber" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://LB-Gebaudeservice.de/" />
+  <meta property="og:title" content="Leicht & Blitzsauber - Gebäudeservice" />
+  <meta property="og:description" content="Zuverlässige Reinigung und Gebäudeservice für private und gewerbliche Kunden." />
+  <meta property="og:image" content="{% static 'images/logo.jpeg' %}" />
+
+  <link rel="icon" type="image/jpeg" href="{% static 'images/logo.jpeg' %}" />
+  <link rel="apple-touch-icon" href="{% static 'images/logo.jpeg' %}" />
+  <link rel="canonical" href="https://LB-Gebaudeservice.de/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}?v=3" />
+</head>
+<body>
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="#home" class="nav-logo">
+        <img src="{% static 'images/logo.jpeg' %}" alt="Leicht & Blitzsauber Logo" class="nav-logo-img" />
+        <div class="logo-text">
+          <span class="logo-name">Leicht &amp; Blitzsauber</span>
+          <span class="logo-tagline">Gebäudeservice</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Start</a>
+        <a href="#services" class="nav-link">Leistungen</a>
+        <a href="#about" class="nav-link">Über uns</a>
+        <a href="#why-us" class="nav-link">Vorteile</a>
+        <a href="#contact" class="nav-link">Kontakt</a>
+        <a href="#contact" class="btn btn-primary nav-cta">Angebot anfragen</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+  <div class="hero-photo-bg" style="background-image: url('{% static "images/pic4.webp" %}');" aria-hidden="true"></div>
+  <div class="hero-photo-overlay" aria-hidden="true"></div>
+
+  <div class="container hero-inner hero-inner--simple">
+    <div class="hero-content" data-animate="fade-up">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        Aichach &amp; Umgebung
+      </div>
+      <h1 class="hero-headline">
+        Professioneller<br />
+        <span class="headline-accent">Gebäudeservice</span>
+      </h1>
+      <p class="hero-sub">
+        Zuverlässige Reinigung, klare Kommunikation und saubere Ergebnisse für private Haushalte, Büros und gewerbliche Objekte.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-envelope-open-text"></i>
+          Kostenloses Angebot
+        </a>
+        <a href="tel:01791100567" class="btn btn-ghost btn-lg">
+          <i class="fa-solid fa-phone"></i>
+          0179 1100567
+        </a>
+      </div>
+
+      <div class="trust-badges">
+        <div class="trust-badge"><i class="fa-solid fa-check"></i> Zuverlässig</div>
+        <div class="trust-badge"><i class="fa-solid fa-check"></i> Professionell</div>
+        <div class="trust-badge"><i class="fa-solid fa-check"></i> Schnelle Rückmeldung</div>
+        <div class="trust-badge"><i class="fa-solid fa-check"></i> Saubere Qualität</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="section services-section" id="services">
+  <div class="container">
+    <div class="section-header" data-animate="fade-up">
+      <div class="section-eyebrow">Unsere Leistungen</div>
+      <h2 class="section-title">Reinigung und Service aus einer Hand</h2>
+      <p class="section-sub">Wir betreuen Wohnungen, Häuser, Büros, Treppenhäuser, Fassaden und Außenbereiche mit verlässlicher Planung und sorgfältiger Ausführung.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card" data-animate="fade-up" data-delay="0">
+        <div class="sc-img" style="background-image: url('{% static "images/routine.jpg" %}');"></div>
+        <div class="sc-body">
+          <h3 class="sc-title">Unterhaltsreinigung</h3>
+          <p class="sc-desc">Regelmäßige Reinigung für private und gewerbliche Räume, abgestimmt auf Ihren Bedarf.</p>
+          <div class="sc-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </div>
+
+      <div class="service-card" data-animate="fade-up" data-delay="80">
+        <div class="sc-img" style="background-image: url('{% static "images/office.jpg" %}');"></div>
+        <div class="sc-body">
+          <h3 class="sc-title">Büroreinigung</h3>
+          <p class="sc-desc">Gepflegte Arbeitsplätze, Sanitärbereiche und Gemeinschaftsflächen für einen professionellen Eindruck.</p>
+          <div class="sc-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </div>
+
+      <div class="service-card" data-animate="fade-up" data-delay="160">
+        <div class="sc-img" style="background-image: url('{% static "images/house.jpg" %}');"></div>
+        <div class="sc-body">
+          <h3 class="sc-title">Gebäudereinigung</h3>
+          <p class="sc-desc">Saubere und gepflegte Immobilien für Wohnanlagen, Gewerbeflächen und öffentliche Bereiche.</p>
+          <div class="sc-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </div>
+
+      <div class="service-card" data-animate="fade-up" data-delay="240">
+        <div class="sc-img" style="background-image: url('{% static "images/styirs.webp" %}');"></div>
+        <div class="sc-body">
+          <h3 class="sc-title">Treppenhausreinigung</h3>
+          <p class="sc-desc">Regelmäßige Pflege von Treppenhäusern, Eingängen, Fluren und gemeinschaftlichen Flächen.</p>
+          <div class="sc-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </div>
+
+      <div class="service-card" data-animate="fade-up" data-delay="320">
+        <div class="sc-img" style="background-image: url('{% static "images/window.jpg" %}');"></div>
+        <div class="sc-body">
+          <h3 class="sc-title">Fensterreinigung</h3>
+          <p class="sc-desc">Streifenfreie Fenster, Glasflächen und Rahmen für Privathaushalte und Unternehmen.</p>
+          <div class="sc-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </div>
+
+      <div class="service-card" data-animate="fade-up" data-delay="480">
+        <div class="sc-img" style="background-image: url('{% static "images/solar1.webp" %}');"></div>
+        <div class="sc-body">
+          <h3 class="sc-title">Solar Reinigung</h3>
+          <p class="sc-desc">Schonende Reinigung von Solaranlagen für bessere Leistung und langfristigen Werterhalt.</p>
+          <div class="sc-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </div>
+
+      <div class="service-card" data-animate="fade-up" data-delay="560">
+        <div class="sc-img" style="background-image: url('{% static "images/fasade.jpg" %}');"></div>
+        <div class="sc-body">
+          <h3 class="sc-title">Fassaden Reinigung</h3>
+          <p class="sc-desc">Pflege und Reinigung von Fassadenflächen für ein sauberes, gepflegtes Erscheinungsbild.</p>
+          <div class="sc-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </div>
+
+      <div class="service-card" data-animate="fade-up" data-delay="640">
+        <div class="sc-img" style="background-image: url('{% static "images/gardeningh.png" %}');"></div>
+        <div class="sc-body">
+          <h3 class="sc-title">Gartenpflege</h3>
+          <p class="sc-desc">Pflege von Grünflächen, Außenanlagen und saisonale Unterstützung rund ums Objekt.</p>
+          <div class="sc-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <section class="section about-section" id="about">
+    <div class="container about-inner">
+      <div class="about-visual" data-animate="fade-right">
+        <div class="about-img-block">
+          <img src="{% static 'images/pic2.jpg' %}" alt="Leicht & Blitzsauber bei der Arbeit" class="about-img" />
+          <div class="about-badge-1">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Professionell versichert</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content" data-animate="fade-up">
+        <div class="section-eyebrow">Über uns</div>
+        <h2 class="section-title">Leicht &amp; Blitzsauber</h2>
+        <p class="about-para">Wir unterstützen private und gewerbliche Kunden mit professioneller Reinigung und zuverlässigem Gebäudeservice in Aichach und Umgebung.</p>
+        <p class="about-para">Ob regelmäßige Reinigung, Fenster, Treppenhaus, Solaranlage, Fassade oder Gartenpflege: Wir arbeiten strukturiert, sauber und kundenorientiert.</p>
+
+        <div class="about-values">
+          <div class="value-item">
+            <div class="value-icon"><i class="fa-solid fa-handshake"></i></div>
+            <div class="value-text"><strong>Zuverlässigkeit</strong><span>Verbindliche Termine und klare Absprachen.</span></div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><i class="fa-solid fa-gem"></i></div>
+            <div class="value-text"><strong>Qualität</strong><span>Gründliche Arbeit mit Blick fürs Detail.</span></div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="value-text"><strong>Professionalität</strong><span>Sauberes Auftreten und passende Ausrüstung.</span></div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><i class="fa-solid fa-heart"></i></div>
+            <div class="value-text"><strong>Kundenzufriedenheit</strong><span>Ihr gutes Gefühl ist unser Maßstab.</span></div>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn btn-primary">Kostenlos anfragen</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section process-section" id="process">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <div class="section-eyebrow">Einfach &amp; transparent</div>
+        <h2 class="section-title">So funktioniert es</h2>
+        <p class="section-sub">In wenigen Schritten zu einem passenden Angebot und einem sauberen Ergebnis.</p>
+      </div>
+
+      <div class="process-timeline">
+        <div class="process-connector"></div>
+        <div class="process-step" data-animate="fade-up" data-delay="0">
+          <div class="ps-number">01</div>
+          <div class="ps-card"><div class="ps-icon"><i class="fa-solid fa-phone-volume"></i></div><h3 class="ps-title">Kontakt aufnehmen</h3><p class="ps-desc">Rufen Sie uns an oder senden Sie Ihre Anfrage über das Formular.</p></div>
+        </div>
+        <div class="process-step" data-animate="fade-up" data-delay="120">
+          <div class="ps-number">02</div>
+          <div class="ps-card"><div class="ps-icon"><i class="fa-solid fa-file-invoice"></i></div><h3 class="ps-title">Angebot erhalten</h3><p class="ps-desc">Wir prüfen Ihren Bedarf und erstellen ein klares, unverbindliches Angebot.</p></div>
+        </div>
+        <div class="process-step" data-animate="fade-up" data-delay="240">
+          <div class="ps-number">03</div>
+          <div class="ps-card"><div class="ps-icon"><i class="fa-solid fa-calendar-days"></i></div><h3 class="ps-title">Termin planen</h3><p class="ps-desc">Gemeinsam finden wir einen passenden Zeitpunkt für den Einsatz.</p></div>
+        </div>
+        <div class="process-step" data-animate="fade-up" data-delay="360">
+          <div class="ps-number">04</div>
+          <div class="ps-card"><div class="ps-icon"><i class="fa-solid fa-house-circle-check"></i></div><h3 class="ps-title">Ergebnis genießen</h3><p class="ps-desc">Unser Team kümmert sich um die Ausführung. Sie sehen den Unterschied.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section" id="faq">
+    <div class="container faq-inner">
+      <div class="section-header" data-animate="fade-up">
+        <div class="section-eyebrow">Fragen</div>
+        <h2 class="section-title">Häufige Fragen</h2>
+        <p class="section-sub">Kurz und klar beantwortet.</p>
+      </div>
+
+      <div class="faq-list" data-animate="fade-up">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false"><span>Wie schnell bekomme ich einen Termin?</span><i class="fa-solid fa-plus faq-icon"></i></button>
+          <div class="faq-answer"><p>Je nach Umfang und Auslastung melden wir uns schnell zurück und schlagen Ihnen passende Termine vor.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false"><span>Bringen Sie Reinigungsmittel und Geräte mit?</span><i class="fa-solid fa-plus faq-icon"></i></button>
+          <div class="faq-answer"><p>Ja, bei Bedarf bringen wir professionelle Mittel, Werkzeuge und Ausrüstung mit.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false"><span>Sind regelmäßige Aufträge möglich?</span><i class="fa-solid fa-plus faq-icon"></i></button>
+          <div class="faq-answer"><p>Ja, wir bieten regelmäßige Einsätze für private und gewerbliche Kunden an.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false"><span>Betreuen Sie Gewerbeobjekte?</span><i class="fa-solid fa-plus faq-icon"></i></button>
+          <div class="faq-answer"><p>Ja, wir betreuen Büros, Wohnanlagen, Gewerbeflächen und weitere Objekte.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact-section" id="contact">
+    <div class="contact-bg-accent"></div>
+    <div class="container contact-inner">
+      <div class="contact-info-col" data-animate="fade-right">
+        <div class="section-eyebrow">Kontakt</div>
+        <h2 class="section-title">Kostenloses<br />Angebot anfragen</h2>
+        <p class="contact-intro">Füllen Sie das Formular aus. Wir melden uns schnellstmöglich mit einer persönlichen Rückmeldung.</p>
+
+        <div class="contact-cards">
+          <a href="tel:01791100567" class="contact-card"><div class="cc-icon"><i class="fa-solid fa-phone"></i></div><div class="cc-text"><strong>Telefon</strong><span>0179 1100567</span></div></a>
+          <div class="contact-card"><div class="cc-icon"><i class="fa-solid fa-fax"></i></div><div class="cc-text"><strong>Fax</strong><span>08251 8898317</span></div></div>
+          <a href="mailto:lb-gebaeudeservice@gmx.de" class="contact-card"><div class="cc-icon"><i class="fa-solid fa-envelope"></i></div><div class="cc-text"><strong>E-Mail</strong><span>lb-gebaeudeservice@gmx.de</span></div></a>
+          <div class="contact-card"><div class="cc-icon"><i class="fa-solid fa-location-dot"></i></div><div class="cc-text"><strong>Adresse</strong><span>Augsburger Str. 40<br />86551 Aichach, Deutschland</span></div></div>
+        </div>
+      </div>
+
+      <div class="contact-form-col" data-animate="fade-up">
+        <form class="contact-form" id="contactForm" method="post" action="{% url 'home' %}#contact" novalidate>
+          {% csrf_token %}
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName">Vollständiger Name <span class="req">*</span></label>
+              {{ form.full_name }}
+              <span class="form-error" id="fullNameError">{{ form.full_name.errors|striptags }}</span>
+            </div>
+            <div class="form-group">
+              <label for="email">E-Mail-Adresse <span class="req">*</span></label>
+              {{ form.email }}
+              <span class="form-error" id="emailError">{{ form.email.errors|striptags }}</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Telefonnummer</label>
+              {{ form.phone }}
+            </div>
+            <div class="form-group">
+              <label for="service">Gewünschte Dienstleistung <span class="req">*</span></label>
+              {{ form.service }}
+              <span class="form-error" id="serviceError">{{ form.service.errors|striptags }}</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="propertyType">Objektart</label>
+            {{ form.property_type }}
+          </div>
+          <div class="form-group">
+            <label for="message">Nachricht <span class="req">*</span></label>
+            {{ form.message }}
+            <span class="form-error" id="messageError">{{ form.message.errors|striptags }}</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fa-solid fa-paper-plane"></i>
+            Anfrage senden
+          </button>
+          <div class="form-success{% if sent %} show{% endif %}" id="formSuccess">
+            <i class="fa-solid fa-circle-check"></i>
+            Vielen Dank! Ihre Nachricht wurde gesendet.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="map-section">
+    <div class="map-header">
+      <div class="container">
+        <h3 class="map-title"><i class="fa-solid fa-location-dot"></i> Standort in Aichach</h3>
+      </div>
+    </div>
+    <div class="map-wrap">
+      <iframe title="Leicht & Blitzsauber Standort" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2618.0!2d11.1195!3d48.4627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f4f61c0cdc555%3A0x4f2d3f8b0c9b7a12!2sAugsburger+Str.+40%2C+86551+Aichach%2C+Germany!5e0!3m2!1sen!2sde!4v1699999999999!5m2!1sen!2sde" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="footer-logo">
+            <img src="{% static 'images/logo.jpeg' %}" alt="Leicht & Blitzsauber Logo" class="footer-logo-img" />
+            <div class="logo-text"><span class="logo-name">Leicht &amp; Blitzsauber</span><span class="logo-tagline">Gebäudeservice</span></div>
+          </a>
+          <p class="footer-desc">Professionelle Reinigung und Gebäudeservice in Aichach und Umgebung - zuverlässig, gründlich und persönlich.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/share/1RKhcevT5x/?mibextid=wwXIfr" aria-label="Facebook" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@leichtblitzsauber?_r=1&_t=ZG-979t0OO525B" aria-label="TikTok" class="social-link">
+  <i class="fa-brands fa-tiktok"></i>
+</a>
+            <a href="https://www.instagram.com/leichtblitzsauber" aria-label="Instagram" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/491791100567" aria-label="WhatsApp" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Start</a></li>
+            <li><a href="#services">Leistungen</a></li>
+            <li><a href="#about">Über uns</a></li>
+            <li><a href="#why-us">Vorteile</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Leistungen</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Unterhaltsreinigung</a></li>
+            <li><a href="#services">Büroreinigung</a></li>
+            <li><a href="#services">Fensterreinigung</a></li>
+            <li><a href="#services">Solar Reinigung</a></li>
+            <li><a href="#services">Fassaden Reinigung</a></li>
+            <li><a href="#services">Gartenpflege</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Kontakt</h4>
+          <ul class="footer-contact-list">
+            <li><i class="fa-solid fa-phone"></i><a href="tel:01791100567">0179 1100567</a></li>
+            <li><i class="fa-solid fa-fax"></i><span>08251 8898317</span></li>
+            <li><i class="fa-solid fa-envelope"></i><a href="mailto:lb-gebaeudeservice@gmx.de">lb-gebaeudeservice@gmx.de</a></li>
+            <li><i class="fa-solid fa-globe"></i><a href="https://LB-Gebaudeservice.de">LB-Gebäudeservice.de</a></li>
+            <li><i class="fa-solid fa-location-dot"></i><span>Augsburger Str. 40<br />86551 Aichach, Deutschland</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>&copy; <span id="footerYear"></span> Leicht &amp; Blitzsauber Gebäudeservice. Alle Rechte vorbehalten.</span>
+        <span class="footer-bottom-links"><a href="#">Datenschutz</a><a href="#">Impressum</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/491791100567" class="whatsapp-fab" aria-label="WhatsApp schreiben" target="_blank" rel="noopener">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="fab-tooltip">WhatsApp schreiben</span>
+  </a>
+  <a href="#contact" class="quote-fab" aria-label="Angebot anfragen">
+    <i class="fa-solid fa-envelope-open-text"></i>
+    <span class="quote-fab-text">Anfragen</span>
+  </a>
+  <button class="back-to-top" id="backToTop" aria-label="Nach oben">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="{% static 'js/script.js' %}?v=3" defer></script>
+</body>
+</html>
