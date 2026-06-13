@@ -409,24 +409,24 @@ input, select, textarea { font-family: inherit; }
 }
 
 /* ── LAYOUT ────────────────────────────────────────────────── */
+/* .container e menaxhon padding-left/right — nuk e override-ojmë */
 .hero-inner {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;      /* gjithçka majtas */
-  padding-top: 140px;           /* ajër nga navbar */
+  align-items: flex-start;
+  padding-top: 140px;
   padding-bottom: 100px;
   position: relative;
   z-index: 1;
-  width: 100%;
+  /* NUK ka width:100% — container e kontrollon gjerësinë */
 }
 
-/* heq kufizimin e vjetër që e mbleth */
 .hero-inner--simple {
-  max-width: 100%;
+  /* asgjë — container e bën punën */
 }
 
 .hero-content {
-  max-width: 620px;             /* teksti ka gjerësi natyrore, jo i shtypur */
+  max-width: 600px;
 }
 
 /* ── HEADLINE ──────────────────────────────────────────────── */
@@ -533,7 +533,7 @@ input, select, textarea { font-family: inherit; }
 }
 
 @media (max-width: 768px) {
-  .hero-video-bg  { position: absolute; }
+  .hero-video-bg      { position: absolute; }
   .hero-photo-overlay { position: absolute; }
 
   .hero-video {
@@ -550,9 +550,7 @@ input, select, textarea { font-family: inherit; }
     padding-bottom: 70px;
   }
 
-  .hero-content {
-    max-width: 100%;
-  }
+  .hero-content { max-width: 100%; }
 
   .hero-headline {
     font-size: clamp(34px, 9vw, 50px);
