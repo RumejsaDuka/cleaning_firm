@@ -128,18 +128,15 @@ STATICFILES_DIRS = [
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'lb-gebaeudeservice@gmx.de')
 CONTACT_RECIPIENT_EMAIL = os.getenv('CONTACT_RECIPIENT_EMAIL', 'lb-gebaeudeservice@gmx.de')
 
-EMAIL_HOST = os.getenv('EMAIL_HOST', '')
-EMAIL_PORT = int(os.getenv('EMAIL_PORT', '587'))
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', '')
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
-EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'True').lower() == 'true'
 # Email settings
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # për development, printon në terminal
-DEFAULT_FROM_EMAIL = 'noreply@lb-gebaeudeservice.de'
-CONTACT_RECIPIENT_EMAIL = 'rumejsaduka0@gmail.com'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.gmx.net'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'lb-gebaeudeservice@gmx.de')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'lb-gebaeudeservice@gmx.de')
+CONTACT_RECIPIENT_EMAIL = os.getenv('CONTACT_RECIPIENT_EMAIL', 'lb-gebaeudeservice@gmx.de')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
