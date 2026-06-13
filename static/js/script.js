@@ -454,4 +454,90 @@ window.addEventListener('scroll', () => {
   } else {
     navbar.classList.remove('scrolled');
   }
+  /* ============================================================
+   HERO VIDEO — hero-video.js
+   Paste this block inside your existing script.js,
+   or load it as a separate <script defer> before </body>.
+   ============================================================ */
+
+(function () {
+  'use strict';
+
+  const video = document.getElementById('heroBgVideo');
+  if (!video) return; // not on the homepage — bail silently
+
+  // ----------------------------------------------------------
+  // 1. AUTOPLAY FALLBACK
+  //    Some browsers block autoplay even with `muted`.
+  //    We attempt to play manually and swallow any rejection.
+  // ----------------------------------------------------------
+  function tryPlay() {
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(function () {
+        // Autoplay blocked — video stays on poster frame, which is fine.
+        // Optionally: show a muted play button here if you want UX control.
+      });
+    }
+  }
+
+  // Play as soon as the browser has buffered enough data
+  if (video.readyState >= 3) {
+    tryPlay();
+  } else {
+    video.addEventListener('canplay', tryPlay, { once: true });
+  }
+
+  // ----------------------------------------------------------
+  // 2. PERFORMANCE: pause video when hero is off-screen,
+  //    resume when it scrolls back into view.
+  //    Saves CPU/battery on long pages.
+  // ----------------------------------------------------------
+  const heroSection = document.getElementById('home');
+
+  if (heroSection && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            tryPlay();
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.01 } // trigger as soon as 1 % is visible
+    );
+    observer.observe(heroSection);
+  }
+
+  // ----------------------------------------------------------
+  // 3. REDUCED MOTION: honour prefers-reduced-motion at runtime
+  //    (the CSS already hides the element; this also stops it
+  //     from downloading/decoding in the background).
+  // ----------------------------------------------------------
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (prefersReduced.matches) {
+    video.pause();
+    video.removeAttribute('autoplay');
+    video.src = ''; // stop network request
+  }
+
+  // Also react if the user changes the system setting mid-session
+  prefersReduced.addEventListener('change', function (e) {
+    if (e.matches) {
+      video.pause();
+      video.src = '';
+    } else {
+      // Restore src from the <source> child
+      const src = video.querySelector('source');
+      if (src) {
+        video.src = src.src;
+        video.load();
+        tryPlay();
+      }
+    }
+  });
+
+})();
 });
