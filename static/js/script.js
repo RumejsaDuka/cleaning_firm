@@ -538,6 +538,14 @@ window.addEventListener('scroll', () => {
       }
     }
   });
+const heroVideo = document.getElementById('heroBgVideo');
+const heroSource = document.getElementById('heroVideoSource');
 
+if (heroVideo && heroSource) {
+  if (window.innerWidth >= 768) {
+    heroSource.src = heroVideo.dataset.desktop;
+    heroVideo.load();
+  }
+}
 })();
 });

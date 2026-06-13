@@ -59,17 +59,17 @@
   <!-- VIDEO BACKGROUND -->
 <div class="hero-video-bg" aria-hidden="true">
   <video
-    class="hero-video"
-    id="heroBgVideo"
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="auto"
-  >
-    <source src="{% static 'videos/hero-bg-desktop.mp4' %}" type="video/mp4" media="(min-width: 768px)" />
-    <source src="{% static 'videos/hero-bg-mobile.mp4' %}" type="video/mp4" />
-  </video>
+  class="hero-video"
+  id="heroBgVideo"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="auto"
+  data-desktop="{% static 'videos/hero-bg-desktop.mp4' %}"
+>
+  <source src="{% static 'videos/hero-bg-mobile.mp4' %}" type="video/mp4" id="heroVideoSource" />
+</video>
 </div>
 
   <div class="hero-photo-overlay" aria-hidden="true"></div>
