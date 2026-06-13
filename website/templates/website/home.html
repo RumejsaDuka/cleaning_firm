@@ -52,14 +52,11 @@
     </div>
   </header>
 
-  <!-- ============================================================
-   HERO SECTION — replace your existing <section class="hero"> with this
-   Put your video file at: static/videos/hero-bg.mp4
-   ============================================================ -->
+{% load static %}
 
 <section class="hero" id="home">
 
-  <!-- VIDEO BACKGROUND (replaces hero-photo-bg) -->
+  <!-- VIDEO BACKGROUND -->
   <div class="hero-video-bg" aria-hidden="true">
     <video
       class="hero-video"
@@ -72,44 +69,39 @@
       poster="{% static 'images/pic4.webp' %}"
     >
       <source src="{% static 'videos/hero-bg.mp4' %}" type="video/mp4" />
-      <!-- Fallback: if video can't play, poster image shows automatically -->
     </video>
   </div>
 
-  <!-- OVERLAY (keep exactly as before) -->
   <div class="hero-photo-overlay" aria-hidden="true"></div>
 
   <div class="container hero-inner hero-inner--simple">
     <div class="hero-content" data-animate="fade-up">
-      <div class="hero-eyebrow">
-        <span class="eyebrow-dot"></span>
-        Aichach &amp; Umgebung &amp; München &amp; Umgebung
-      </div>
+
       <h1 class="hero-headline">
         Professioneller<br />
         <span class="headline-accent">Gebäudeservice</span>
       </h1>
+
       <p class="hero-sub">
-        Zuverlässige Reinigung, klare Kommunikation und saubere Ergebnisse für private Haushalte, Büros und gewerbliche Objekte.
+        Zuverlässige Reinigung für Haushalte, Büros und Gewerbeobjekte in Aichach und München.
       </p>
 
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary btn-lg">
-          <i class="fa-solid fa-envelope-open-text"></i>
           Kostenloses Angebot
         </a>
         <a href="tel:01791100567" class="btn btn-ghost btn-lg">
-          <i class="fa-solid fa-phone"></i>
           0179 1100567
         </a>
       </div>
 
       <div class="trust-badges">
-        <div class="trust-badge"><i class="fa-solid fa-check"></i> Zuverlässig</div>
-        <div class="trust-badge"><i class="fa-solid fa-check"></i> Professionell</div>
-        <div class="trust-badge"><i class="fa-solid fa-check"></i> Schnelle Rückmeldung</div>
-        <div class="trust-badge"><i class="fa-solid fa-check"></i> Saubere Qualität</div>
+        <div class="trust-badge">Zuverlässig</div>
+        <div class="trust-badge">Professionell</div>
+        <div class="trust-badge">Schnelle Rückmeldung</div>
+        <div class="trust-badge">Saubere Qualität</div>
       </div>
+
     </div>
   </div>
 
