@@ -389,7 +389,7 @@ input, select, textarea { font-family: inherit; }
   width: auto;
   height: auto;
   object-fit: cover;
-  object-position: top;   /* ← tregon pjesën e sipërme, jo mes */
+  object-position: center 0%;   /* ← tregon pjesën e sipërme, jo mes */
   animation: videoZoom 20s ease-in-out infinite alternate;
   filter: saturate(0.85) brightness(0.9);
   pointer-events: none;
