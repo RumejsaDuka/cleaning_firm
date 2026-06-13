@@ -238,8 +238,8 @@ input, select, textarea { font-family: inherit; }
 }
 
 .nav-logo-img {
-  width: 48px;
-  height: 48px;
+  width: 72px;
+  height: 72px;
   object-fit: contain;
   border-radius: 0;
   background: transparent;
