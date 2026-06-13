@@ -389,6 +389,7 @@ input, select, textarea { font-family: inherit; }
   width: auto;
   height: auto;
   object-fit: cover;
+  object-position: center 20%;   /* ← tregon pjesën e sipërme, jo mes */
   animation: videoZoom 20s ease-in-out infinite alternate;
   filter: saturate(0.85) brightness(0.9);
   pointer-events: none;
@@ -599,57 +600,6 @@ input, select, textarea { font-family: inherit; }
   }
   .scroll-line { animation: none; }
 }
-
-/* ============================================================
-   STATS BAR
-   ============================================================ */
-.stats-bar {
-  background: var(--white);
-  border-bottom: 1px solid var(--gray-border);
-  padding: 48px 0;
-  position: relative;
-  z-index: 2;
-}
-
-.stats-grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-}
-
-.stat-item {
-  text-align: center;
-  flex: 1;
-  padding: 0 24px;
-}
-
-.stat-big {
-  display: block;
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 900;
-  letter-spacing: 0;
-  background: var(--blue-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1;
-  margin-bottom: 6px;
-}
-
-.stat-desc {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-muted);
-}
-
-.stat-divider {
-  width: 1px;
-  height: 50px;
-  background: var(--gray-border);
-  flex-shrink: 0;
-}
-
 /* ============================================================
    SERVICES
    ============================================================ */
