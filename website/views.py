@@ -57,3 +57,9 @@ def home(request):
             return JsonResponse({'ok': False, 'errors': form.errors}, status=400)
 
     return render(request, 'website/home.html', {'form': form, 'sent': sent})
+
+def datenschutz(request):
+    return render(request, 'website/datenschutz.html')
+
+def impressum(request):
+    return render(request, 'website/impressum.html')
