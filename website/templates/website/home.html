@@ -67,7 +67,8 @@
     playsinline
     preload="auto"
   >
-    <source src="{% static 'videos/hero-bg.mp4' %}" type="video/mp4" />
+    <source src="{% static 'videos/hero-bg-desktop.mp4' %}" type="video/mp4" media="(min-width: 768px)" />
+    <source src="{% static 'videos/hero-bg-mobile.mp4' %}" type="video/mp4" />
   </video>
 </div>
 
