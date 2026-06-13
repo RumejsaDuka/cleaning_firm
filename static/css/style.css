@@ -212,7 +212,7 @@ input, select, textarea { font-family: inherit; }
   z-index: 100;
   background: transparent;
   transition: background 0.3s ease, padding 0.3s ease;
-  padding: 16px 0;
+  padding: 14px 0;
 }
 
 .navbar.scrolled {
@@ -234,12 +234,12 @@ input, select, textarea { font-family: inherit; }
 .footer-logo {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .nav-logo-img {
-  width: 72px;
-  height: 72px;
+  width: 65px;
+  height: 65px;
   object-fit: contain;
   border-radius: 0;
   background: transparent;

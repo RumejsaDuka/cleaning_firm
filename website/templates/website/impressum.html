@@ -8,15 +8,28 @@
   <link rel="stylesheet" href="{% static 'css/style.css' %}?v=3" />
 </head>
 <body>
-  <header class="navbar" id="navbar">
+<header class="navbar" id="navbar">
     <div class="container navbar-inner">
-      <a href="/" class="nav-logo">
-        <img src="{% static 'images/logonobg.png' %}" alt="Logo" class="nav-logo-img" />
+      <a href="#home" class="nav-logo">
+        <img src="{% static 'images/logonobg.png' %}" alt="Leicht & Blitzsauber Logo" class="nav-logo-img" />
         <div class="logo-text">
           <span class="logo-name">Leicht &amp; Blitzsauber</span>
           <span class="logo-tagline">Gebäudeservice</span>
         </div>
       </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Start</a>
+        <a href="#services" class="nav-link">Leistungen</a>
+        <a href="#about" class="nav-link">Über uns</a>
+        <a href="#why-us" class="nav-link">Vorteile</a>
+        <a href="#contact" class="nav-link">Kontakt</a>
+        <a href="#contact" class="btn btn-primary nav-cta">Angebot anfragen</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
