@@ -218,8 +218,8 @@ input, select, textarea { font-family: inherit; }
 .navbar.scrolled {
   background: rgba(5, 20, 50, 0.95);
   backdrop-filter: blur(10px);
-  box-shadow: 0 2px 20px rgba(0,0,0,0.2);
-  padding: 24px 0; /* ← më i lartë kur scrolled */
+  box-shadow: 0 2px150px rgba(0,0,0,0.2);
+  padding: 10px 0; /* ← më i lartë kur scrolled */
 }
 
 .navbar-inner {
