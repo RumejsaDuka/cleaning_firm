@@ -402,12 +402,12 @@ input, select, textarea { font-family: inherit; }
 }
 
 /* ── OVERLAY ───────────────────────────────────────────────── */
-.hero-photo-overlay {
+/* .hero-photo-overlay {
   position: fixed;
   inset: 0;
   background: linear-gradient(135deg, rgba(0,20,60,0.78) 0%, rgba(0,40,90,0.55) 100%);
   z-index: -1;
-}
+} */
 
 /* ── LAYOUT ────────────────────────────────────────────────── */
 /* .container e menaxhon padding-left/right — nuk e override-ojmë */
