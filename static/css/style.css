@@ -422,9 +422,6 @@ input, select, textarea { font-family: inherit; }
   /* NUK ka width:100% — container e kontrollon gjerësinë */
 }
 
-.hero-inner--simple {
-  /* asgjë — container e bën punën */
-}
 
 .hero-content {
   max-width: 600px;
