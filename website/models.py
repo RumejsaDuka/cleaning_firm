@@ -17,3 +17,5 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return f"{self.full_name} — {self.service} ({self.created_at.strftime('%d.%m.%Y')})"
+    
+
